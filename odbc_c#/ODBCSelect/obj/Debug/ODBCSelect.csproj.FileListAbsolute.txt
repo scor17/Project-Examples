@@ -1,0 +1,15 @@
+H:\Term3\ClientServer\ODBCSelect\ODBCSelect\bin\Debug\ODBCSelect.exe.config
+H:\Term3\ClientServer\ODBCSelect\ODBCSelect\bin\Debug\ODBCSelect.exe
+H:\Term3\ClientServer\ODBCSelect\ODBCSelect\bin\Debug\ODBCSelect.pdb
+H:\Term3\ClientServer\ODBCSelect\ODBCSelect\obj\Debug\ODBCSelect.exe
+H:\Term3\ClientServer\ODBCSelect\ODBCSelect\obj\Debug\ODBCSelect.pdb
+H:\Term3\ClientServer\ODBCSelect\ODBCSelect\obj\Debug\ODBCSelect.csprojResolveAssemblyReference.cache
+H:\Term3\3940-CS\ODBCSelect\ODBCSelect\bin\Debug\ODBCSelect.exe.config
+H:\Term3\3940-CS\ODBCSelect\ODBCSelect\obj\Debug\ODBCSelect.exe
+H:\Term3\3940-CS\ODBCSelect\ODBCSelect\obj\Debug\ODBCSelect.pdb
+H:\Term3\3940-CS\ODBCSelect\ODBCSelect\bin\Debug\ODBCSelect.exe
+H:\Term3\3940-CS\ODBCSelect\ODBCSelect\bin\Debug\ODBCSelect.pdb
+H:\Term3\3940-CS\ODBCSelect\ODBCSelect\obj\Debug\ODBCSelect.csprojResolveAssemblyReference.cache
+Z:\Term3\3940-CS\ODBCSelect\ODBCSelect\bin\Debug\ODBCSelect.exe.config
+Z:\Term3\3940-CS\ODBCSelect\ODBCSelect\obj\Debug\ODBCSelect.exe
+Z:\Term3\3940-CS\ODBCSelect\ODBCSelect\obj\Debug\ODBCSelect.pdb
