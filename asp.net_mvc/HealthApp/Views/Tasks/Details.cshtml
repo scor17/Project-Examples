@@ -1,0 +1,103 @@
+﻿@model healthApp.Models.Tasks
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Schedule</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor( model => model.taskID )
+        </dt>
+
+        <dd>
+            @Html.DisplayFor( model => model.taskID )
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor( model => model.PatientID )
+        </dt>
+
+        <dd>
+            @Html.DisplayFor( model => model.PatientID )
+        </dd>
+        <dt>
+            @Html.DisplayNameFor( model => model.ClientFirstName )
+
+        </dt>
+
+
+        <dd>
+            @Html.DisplayFor( model => model.ClientFirstName )
+
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor( model => model.ClientLastName )
+
+        </dt>
+
+
+        <dd>
+            @Html.DisplayFor( model => model.ClientLastName )
+
+        </dd>
+        <dt>
+            @Html.DisplayNameFor( model => model.RoomNo )
+        </dt>
+
+        <dd>
+            @Html.DisplayFor( model => model.RoomNo )
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor( model => model.Task )
+        </dt>
+
+        <dd>
+            @Html.DisplayFor( model => model.Task )
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor( model => model.tDate )
+        </dt>
+
+        <dd>
+            @Html.DisplayFor( model => model.tDate )
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor( model => model.duration )
+        </dt>
+
+        <dd>
+            @Html.DisplayFor( model => model.duration )
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor( model => model.actual )
+        </dt>
+
+        <dd>
+            @Html.DisplayFor( model => model.actual )
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor( model => model.comments )
+        </dt>
+
+        <dd>
+            @Html.DisplayFor( model => model.comments )
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink( "Edit", "Edit", new { id = Model.ID } ) |
+    @Html.ActionLink( "Back to List", "Index" )
+</p>

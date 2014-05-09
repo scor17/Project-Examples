@@ -1,0 +1,10 @@
+HealthAppSprint2b BUGS FOUND
+=================
+
+For SysAdmin:
+(detail is broken) in account 
+In task, comment button is hidden/transparent but still clickable
+Error page when viewing subscribed service of a client with no service assigned to
+Client still shows bed number instead of room number
+Generated schedule accumulates in task. (should limit generate schedule if already generated for the day disable it)
+Chat styling (window and button) is off for phones

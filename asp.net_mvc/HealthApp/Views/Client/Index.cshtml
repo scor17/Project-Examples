@@ -1,0 +1,129 @@
+﻿@model IEnumerable<healthApp.Models.Client>
+
+@{
+    ViewBag.Title = "View Clients";
+}
+<h2>Clients</h2>
+<div class="col-lg-2">
+
+ <br />
+    <br/><br /><br />
+    <div class="btn-group">
+        <button type="button" class="btn btn-primary">Sort By:</button>
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+            <span class="caret"></span>
+            <span class="sr-only">Toggle Dropdown</span>
+        </button>
+       
+        <ul class="dropdown-menu" role="menu">
+            <li><a href="">Choose an option</a></li>
+            <li class="divider"></li>
+            <li><a href="/Client/Index/1">First Name</a></li>
+            <li><a href="/Client/Index/2">LastName</a></li>
+            <li><a href="/Client/Index/3">BedNumber</a></li>
+            <li><a href="/Client/Index/3">DOB</a></li>
+
+        </ul>
+     </div>
+    </div>
+<div class="col-lg-8">
+   
+    <b class="pull-left">@Html.ActionLink("Create New", "Create")</b>
+
+  
+        @foreach (var item in Model)
+{
+    <table class="table table-striped">
+        <thead style="padding:100px">
+
+        <th colspan="4" >
+            <b>@Html.DisplayFor(model => item.ClientFirstName) @Html.DisplayFor(model => item.ClientLastName)</b>
+        </th>
+        </thead>
+        <tr>
+
+            <td rowspan="3" style="width: 10%; margin-spacing:0 25">
+                <img src="@Url.Content("~/Client/ViewImage/" + @Html.DisplayFor(model => item.ClientID))" style="height: 98px; width: 103px" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>@Html.DisplayNameFor(model => model.ClientGender)</b>
+            </td>
+
+            <td>
+                @Html.DisplayFor(model => item.ClientGender)
+            </td>
+            <td>
+                <b>@Html.ActionLink("Edit", "Edit", new { id = item.ClientID })</b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>@Html.DisplayNameFor(model => model.ClientDOB)</b>
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.ClientDOB)
+            </td>
+            <td>
+                <b>@Html.ActionLink("Details", "Details", new { id = item.ClientID })</b>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <b>@Html.DisplayNameFor(model => model.ClientHealthNum)</b>
+            </td>
+            <td colspan="1">
+                @Html.DisplayFor(model => item.ClientHealthNum)
+            </td>
+
+            <td>
+                <b>@Html.ActionLink("Add Services", "../Services/AddServices", new { id = item.ClientID, roomNo = item.RoomNumber, fn = item.ClientFirstName, ln = item.ClientLastName })</b>
+
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <b>@Html.DisplayNameFor(model => model.ClientMarital)</b>
+            </td>
+            <td colspan="1">
+                @Html.DisplayFor(model => item.ClientMarital)
+            </td>
+
+            <td>
+                <b>@Html.ActionLink("View Subscribed Services", "GetServices", new { id = item.ClientID })</b>
+
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <b>@Html.DisplayNameFor(model => model.RoomNumber)</b>
+            </td>
+            <td colspan="1">
+                @Html.DisplayFor(model => item.RoomNumber)
+            </td>
+            <td>
+                <b>@Html.ActionLink("Delete", "Delete", new { id = item.ClientID })</b>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <b>@Html.DisplayNameFor(model => model.ClientFamilyDoc)</b>
+            </td>
+            <td colspan="1">
+                @Html.DisplayFor(model => item.ClientFamilyDoc)
+            </td>
+            <td>
+                <b>@Html.ActionLink("Upload Photo", "UploadPicture", new { id = item.ClientID })</b>
+            </td>
+        </tr>
+    </table>
+            <br/>
+            <br/>
+}
+
+</div>
+<div class="col-lg-2"></div>
+
+
+

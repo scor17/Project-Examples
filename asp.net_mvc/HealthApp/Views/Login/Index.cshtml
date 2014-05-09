@@ -1,0 +1,57 @@
+﻿@model IEnumerable<healthApp.Models.Accounts>
+@{
+    ViewBag.Title = "Index";
+}
+<div class="col-lg-10 col-lg-offset-1">
+    <h2>Manage Users</h2>
+
+    <p class="btn btn-default">
+        @Html.ActionLink("Create New", "Create")
+    </p>
+
+    <table class="table table-striped">
+        <thead>
+        <th>
+            @Html.DisplayNameFor(model => model.First().Username)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().fName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().lName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().acctType)
+        </th>
+        <th>
+            
+        </th>
+        </thead>
+        @foreach (var item in Model)
+        {
+
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Username)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.fName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.lName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.acctType)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ID }, new { @class = "btn btn-default", style="width:7em" })  
+                    @Html.ActionLink("Details", "Details", new { id = item.ID }, new { @class = "btn btn-default", style = "width:7em" }) 
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ID }, new { @class = "btn btn-danger pull-right", style = "width:7em" }) 
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+<div class="col-lg-2"></div>

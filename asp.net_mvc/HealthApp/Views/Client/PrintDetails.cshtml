@@ -1,0 +1,88 @@
+﻿@model healthApp.Controllers.ClientController.ClientDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+@{
+    
+<h2>Personal Service Plan For @Html.DisplayFor(model => model.client.ClientFirstName) @Html.DisplayFor(model => model.client.ClientLastName)</h2>
+
+<div>
+    <table class="table table-striped">
+        <tr>
+            <td>Client Type: @Html.DisplayFor(model => model.client.ClientType)</td><td>Marital Status:@Html.DisplayFor(model => model.client.ClientMarital)</td><td>@Html.DisplayFor(model => model.client.ClientDOB)</td>
+        </tr>
+        <tr>
+            <td>Health #: @Html.DisplayFor(model => model.client.ClientHealthNum)</td><td>Gender: @Html.DisplayFor(model => model.client.ClientGender)</td>
+        </tr>
+        <tr>
+            <td>Family Doctor: @Html.DisplayFor(model => model.client.ClientFamilyDoc)</td><td>Pharmacist: @Html.DisplayFor(model => model.client.ClientPharmacist)</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="heading"><center><strong>Safety</strong></center></td>
+        </tr>
+        <tr>
+            <td>Safety Concern:@Html.DisplayFor(model => model.client.ClientSafetyConcern)</td>
+        </tr>
+        <tr>
+            <td>Risk Level: @Html.DisplayFor(model => model.client.ClientRiskLevel)</td>
+        </tr>
+        <tr>
+            <td>Indoor Mobility:@Html.DisplayFor(model => model.client.ClientIndoorMobility)</td>
+        </tr>
+        <tr>
+            <td>Outdoor Mobility: @Html.DisplayFor(model => model.client.ClientOutdoorMobility)</td>
+        </tr>
+        <tr>
+            <td>Current Medication: @Html.DisplayFor(model => model.client.ClientCurrentMedication)</td>
+        </tr>
+        <tr>
+            <td>Medication: @Html.DisplayFor(model => model.client.ClientMedication)</td>
+        </tr>
+        <tr>
+            <td>Food: @Html.DisplayFor(model => model.client.ClientFood)</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="heading"><center><strong>Communication</strong></center></td>
+        </tr>
+        <tr>
+            <td>Preferred Language: @Html.DisplayFor(model => model.client.ClientPreferredLanguage)</td><td>Interpreter Req.: @Html.DisplayFor(model => model.client.ClientInterpreterRequired)</td>
+        </tr>
+        <tr>
+            <td>Hearing: @Html.DisplayFor(model => model.client.ClientHearing)</td>
+        </tr>
+        <tr>
+            <td>Understands: @Html.DisplayFor(model => model.client.ClientDoesUnderstand)</td><td>Vision: @Html.DisplayFor(model => model.client.ClientVision)</td>
+        </tr>
+        <tr>
+            <td>Other: @Html.DisplayFor(model => model.client.ClientOther)</td>
+        </tr>
+        <tr>
+            <td>Special Diet: @Html.DisplayFor(model => model.client.ClientSpecialDiet)</td>
+        </tr>
+    </table>
+    <div id="page-break"></div>
+    <table class="table table-striped">
+        <tr>
+            <td colspan="3" class="heading"><center><strong>Diagnosis</strong></center></td>
+        </tr>
+        <tr>
+            <td>Client Diagnosis: @Html.DisplayFor(model => model.client.ClientDiagnosis)</td>
+        </tr>
+    </table>
+</div>
+    @Html.ActionLink("Print", "", new { id = "" }, new { id="printButton",@class = "btn btn-default", onclick = "printPage()" })
+<script>
+    function printPage()
+    {
+        window.print();
+        //.page-break	{ display: block; page-break-before: always; }
+        document.getElementById("printButton").style.display = 'none';
+        document.getElementById("detailsLinks").style.display = 'none';
+        document.getElementById("page-break").style.display = 'block';
+        document.getElementById("page-break").style.pageBreakBefore = 'always';
+    }
+</script>
+ 
+}

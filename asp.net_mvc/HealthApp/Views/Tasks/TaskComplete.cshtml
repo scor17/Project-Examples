@@ -1,0 +1,56 @@
+﻿@model healthApp.Models.Tasks
+<!-- This view display a completed task when we need to add comments-->
+@{
+    ViewBag.Title = "TaskComplete";
+    
+}
+
+<h2>TaskComplete</h2>
+
+<!--http://stackoverflow.com/questions/12353748/redirecttoaction-doesnot-change-the-browser-url-->
+@using (Html.BeginForm(new { data_ajax = "false" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Task</legend>
+
+        @Html.HiddenFor(model => model.ID)
+        @Html.HiddenFor(model => model.taskID)
+        @Html.HiddenFor(model => model.PatientID)
+        @Html.HiddenFor(model => model.RoomNo)
+        @Html.HiddenFor(model => model.Task)
+        @Html.HiddenFor(model => model.tDate)
+        @Html.HiddenFor(model => model.duration)
+
+        <div class="editor-label">
+            Comments:
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.comments, new { size = 15 })
+            @Html.ValidationMessageFor(model => model.comments)
+        </div>
+        <div class="editor-label">
+            Actual time:
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.actual, new { size = 15 })
+            @Html.ValidationMessageFor(model => model.actual)
+        </div>
+        <div class="editor-label">
+            Service Rating:
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.serviceRating, new { size = 15 })
+            @Html.ValidationMessageFor(model => model.serviceRating)
+        </div>
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

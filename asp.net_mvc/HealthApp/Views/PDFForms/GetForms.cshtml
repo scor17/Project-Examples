@@ -1,0 +1,53 @@
+﻿@model IEnumerable<healthApp.Models.PDFForm>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Forms for Client:</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            File Name
+        </th>
+        <th>
+            Client Name
+        </th>
+        <th>
+            Client ID
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fileName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.clientName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.clientID)
+            </td>
+
+            <td>
+
+                @Html.ActionLink("Download", "GetFile", new { fileName = item.fileName }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+
+
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,37 @@
+﻿@model healthApp.Models.Credentials
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div class="row">
+    <h4>Accounts</h4>
+	<hr />
+    <div class="col-lg-5">
+        <table class="table">
+            <tr>
+                <td><strong>@Html.DisplayNameFor(model => model.UserName)</strong></td>
+                <td>@Html.DisplayFor(model => model.UserName)</td>
+            </tr>
+            <tr>
+                <td><strong>@Html.DisplayNameFor(model => model.fName)</strong></td>
+                <td>@Html.DisplayFor(model => model.fName)</td>
+            </tr>
+            <tr>
+                <td><strong>@Html.DisplayNameFor(model => model.lName)</strong></td>
+                <td>@Html.DisplayFor(model => model.lName)</td>
+            </tr>
+            <tr>
+                <td><strong>@Html.DisplayNameFor(model => model.acctType)</strong></td>
+                <td>@Html.DisplayFor(model => model.acctType)</td>
+            </tr>
+
+        </table>
+    </div>
+</div>
+<div class="row clearfix">
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</div>

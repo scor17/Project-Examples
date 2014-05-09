@@ -1,0 +1,120 @@
+﻿@model healthApp.Models.Services
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Tasks</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor( model => model.PatientID )
+        </dt>
+
+        <dd>
+            @Html.DisplayFor( model => model.PatientID )
+        </dd>
+        <dt>
+            @Html.DisplayNameFor( model => model.ClientFirstName )
+
+        </dt>
+
+
+        <dd>
+            @Html.DisplayFor( model => model.ClientFirstName )
+
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor( model => model.ClientLastName )
+
+        </dt>
+
+
+        <dd>
+            @Html.DisplayFor( model => model.ClientLastName )
+
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor( model => model.RoomNo )
+        </dt>
+
+        <dd>
+            @Html.DisplayFor( model => model.RoomNo )
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor( model => model.Task )
+        </dt>
+
+        <dd>
+            @Html.DisplayFor( model => model.Task )
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor( model => model.duration )
+        </dt>
+
+        <dd>
+            @Html.DisplayFor( model => model.duration )
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor( model => model.dtStart )
+        </dt>
+
+        <dd>
+            @Html.DisplayFor( model => model.dtStart )
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor( model => model.dtEnd )
+        </dt>
+
+        <dd>
+            @Html.DisplayFor( model => model.dtEnd )
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor( model => model.freq )
+        </dt>
+
+        <dd>
+            @Html.DisplayFor( model => model.freq )
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor( model => model.interval )
+        </dt>
+
+        <dd>
+            @Html.DisplayFor( model => model.interval )
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor( model => model.count )
+        </dt>
+
+        <dd>
+            @Html.DisplayFor( model => model.count )
+        </dd>
+
+        <dd>
+            @Html.DisplayFor( model => model.byDay )
+        </dd>
+
+        <dd>
+            @Html.DisplayFor( model => model.byMonthDay )
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink( "Edit", "Edit", new { id = Model.ID } ) |
+    @Html.ActionLink( "Back to List", "Index" )
+</p>

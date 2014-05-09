@@ -1,0 +1,57 @@
+﻿@model IEnumerable<healthApp.Models.Tasks>
+<!-- This view displays today's Schedule-->
+@{
+    ViewBag.Title = "PopulateTasks";
+
+}
+
+
+<!-- Version 2 -->
+<div class="col-lg-12">
+    <h1> Tasks for Today's Shift</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Client Name</th>
+                <th>Room Number</th>
+                <th>Service Type</th>
+                <th>Expected Time</th>
+                <th>Actual Time</th>
+                <th>Rating</th>
+                <th>Comments</th>
+                <th class="print-view">Add Comments</th>
+
+            </tr>
+        </thead>
+        @foreach (var item in Model)
+        {
+            <tbody>
+                <tr>
+                    <td>@Html.DisplayFor(model => item.ClientFirstName) @Html.DisplayFor(model => item.ClientLastName)</td>
+                    <td>@Html.DisplayFor(model => item.RoomNo)</td>
+                    <td>@Html.DisplayFor(model => item.Task)</td>
+                    <td>@Html.DisplayFor(model => item.duration)</td>
+                    <td>@Html.DisplayFor(model => item.actual)</td>
+                    <td>@Html.DisplayFor(model => item.serviceRating)</td>
+                    <td>@Html.DisplayFor(modelItem => item.comments)</td>
+                    <td style="width:20px;" id="button">
+                        <!-- method within controller, controller, id and method-->
+                        @using (Html.BeginForm("TaskComplete", "Tasks", new { id = item.ID }, FormMethod.Get))
+                        {
+                            <button type="submit" class="print-view glyphicon glyphicon-check" style=" color:#428bca; border: 0; background: transparent"></button>
+                        }
+                    </td>
+                </tr>
+            </tbody>
+
+        }
+
+    </table>
+    @Html.ActionLink("Print", "", new { id = "" }, new { id = "printButton", @class = "print-view btn btn-default", onclick = "printPage()" })
+    <script>
+        function printPage() {
+            window.print();
+        }
+    </script>
+
+</div>

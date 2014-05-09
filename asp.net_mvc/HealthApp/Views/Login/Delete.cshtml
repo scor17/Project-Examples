@@ -1,0 +1,61 @@
+﻿@model healthApp.Models.Accounts
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this account?</h3>
+<div class="col-md-5 ">
+    @*<h4>Accounts</h4>*@
+    <div>
+        <table class="table table-striped table-condensed">
+            <thead>
+                <tr></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <b>@Html.DisplayNameFor( model => model.Username ):</b>
+                    </td>
+                    <td>
+                        @Html.DisplayFor( model => model.Username, new { id = "username" } )
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>@Html.DisplayNameFor( model => model.fName ):</b>
+                    </td>
+                    <td>
+                        @Html.DisplayFor( model => model.fName, new { id = "fName" } )
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b> @Html.DisplayNameFor( model => model.lName ):</b>
+                    </td>
+                    <td>
+                        @Html.DisplayFor( model => model.lName, new { id = "lName" } )
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b> @Html.DisplayNameFor( model => model.acctType ):</b>
+                    </td>
+                    <td>
+                        @Html.DisplayFor( model => model.acctType, new { id = "accType" } )
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    @using ( Html.BeginForm() ) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink( "Back to List", "Index" )
+        </div>
+    }
+</div>

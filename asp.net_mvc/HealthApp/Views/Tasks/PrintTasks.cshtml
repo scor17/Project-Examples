@@ -1,0 +1,48 @@
+﻿@model IEnumerable<healthApp.Models.Tasks>
+<!-- This view puts views in the view using the view-->
+@{
+    ViewBag.Title = "Print Tasks";
+}
+<style type="text/css" media="print">
+    #tasks { visibility: visible; } 
+</style>
+
+<div class="col-lg-12">
+    <table id="tasks" class="table">
+        <thead>
+            <tr>
+                <th>@ViewBag.User : @ViewBag.ShiftStart to @ViewBag.ShiftEnd</th>
+            </tr>
+            <tr>
+                <th>Client ID</th>
+                <th>Room Number</th>
+                <th>Service Type</th>
+                <th>Actual Time</th>
+                <th>Comments</th>
+
+            </tr>
+        </thead>
+        @foreach (var item in Model)
+        {
+            <tbody>
+                <tr>
+                    <td>@Html.DisplayFor(model => item.PatientID)</td>
+                    <td>@Html.DisplayFor(model => item.RoomNo)</td>
+                    <td>@Html.DisplayFor(model => item.Task)</td>
+                    <td>@Html.DisplayFor(model => item.actual)</td>
+                    <td>@Html.DisplayFor(modelItem => item.comments)</td>
+                    
+                </tr>
+            </tbody>
+        }
+    </table>
+    <!--Calling an actionlink so it goes through the crazy mvc overhead-->
+    @Html.ActionLink("Print", "", new { id = "" }, new { id="printButton",@class = "btn btn-default", onclick = "printPage()" })
+    <script>
+        function printPage()
+        {
+            window.print();
+            document.getElementById("printButton").style.display = 'none';
+        }
+    </script> 
+</div>

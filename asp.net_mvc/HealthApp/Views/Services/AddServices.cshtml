@@ -1,0 +1,124 @@
+﻿@model healthApp.Models.Services
+@{
+    ViewBag.Title = "AddServices";
+}
+<style>
+    .col-xs-12 {
+        background-color:inherit;
+    }
+
+</style>
+<h2>Create</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Services</h4>
+
+        @Html.ValidationSummary(true)
+
+        <div class="container">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-8 form-group">
+                @{ var taskList = new List<SelectListItem>
+                   {
+                       new SelectListItem{Text="Medication", Value="Medication"},
+                       new SelectListItem{Text="Bath/Shower", Value="Bath/Shower"},
+                       new SelectListItem{Text="House Keeping", Value="House Keeping"}
+                   };
+                }
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <label for="task">Task</label>
+                    <br />
+                    @*@Html.TextBoxFor(model => model.Task, new { @class = "form-control", id="task"})*@
+                    @*@Html.ValidationMessageFor(model => model.Task)*@
+                    @Html.DropDownList("Task", new SelectList(taskList, "Text", "Value"))
+                    @Html.ValidationMessageFor(model => model.Task)
+                </div>
+
+
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <label for="duration">Duration</label>
+                    <br />
+                    @Html.TextBoxFor(model => model.duration, new { @class = "form-control", id="duration" })
+                    @Html.ValidationMessageFor(model => model.duration)
+                </div>
+
+
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <label for="start">Start</label>
+                    <br />
+                    @Html.TextBoxFor(model => model.dtStart, new { @class = "form-control", id="start", type="date" })
+                    @Html.ValidationMessageFor(model => model.dtStart)
+                </div>
+
+
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <label for="until">Until</label>
+                    <br />
+                    @Html.TextBoxFor(model => model.dtEnd, new { @class = "form-control", id="until", type="date"})
+                    @Html.ValidationMessageFor(model => model.dtEnd)
+                </div>
+            
+
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <label for="frequency">Frequency</label>
+                <br />
+                @Html.TextBoxFor(model => model.freq, new { @class = "form-control", id="frequency" })
+                @Html.ValidationMessageFor(model => model.freq)
+            </div>
+
+
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <label for="interval">Interval</label>
+                <br />
+                @Html.TextBoxFor(model => model.interval, new { @class = "form-control", id="interval" })
+                @Html.ValidationMessageFor(model => model.interval)
+            </div>
+
+
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <label for="occourances">Occurances</label>
+                <br />
+                @Html.TextBoxFor(model => model.count, new { @class = "form-control", id="occourances", type="number" })
+                @Html.ValidationMessageFor(model => model.count)
+            </div>
+
+
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <label for="day">By Day</label>
+                <br />
+                @Html.TextBoxFor(model => model.byDay, new { @class = "form-control", id="day" })
+                @Html.ValidationMessageFor(model => model.byDay)
+            </div>
+        
+
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <label for="month">By Month</label>
+            <br />
+            @Html.TextBoxFor(model => model.byMonthDay, new { @class = "form-control", type="month", id="month" })
+            @Html.ValidationMessageFor(model => model.byMonthDay)
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <input type="submit" value="Save" class="btn btn-default" style="margin: 7% 0 0 65%;" />
+            </div>
+        </div>
+    </div>
+
+</div>
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+    <div>
+        @Html.ActionLink("Back to Client", "../Client/Details/", new { id = Model.PatientID })
+
+    </div>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

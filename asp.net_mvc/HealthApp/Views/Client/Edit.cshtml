@@ -1,0 +1,268 @@
+﻿@model healthApp.Models.Client
+
+@{
+    ViewBag.Title = "Edit";
+}
+<h2 align="right">Edit a client</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal" id="accordion">
+        <hr />
+        @Html.ValidationSummary(true)
+        <a data-toggle="collapse" href="#collapseOne">
+            <h3>Personal information</h3>
+        </a>
+        <table id="collapseOne" class="panel-collapse collapse in table table-condensed col-md-12">
+            <tr class="form-group col-md-12">
+                <td class="col-md-6">
+                    @Html.LabelFor(model => model.ClientFirstName)
+                    <br />
+                    @Html.EditorFor(model => model.ClientFirstName)
+                    @Html.ValidationMessageFor(model => model.ClientFirstName)
+                </td>
+                <td class="col-md-6">
+                    @Html.LabelFor(model => model.ClientLastName)
+                    <br />
+                    @Html.EditorFor(model => model.ClientLastName)
+                    @Html.ValidationMessageFor(model => model.ClientLastName)
+                </td>
+            </tr>
+
+            <tr class="form-group col-md-12">
+                <td class="col-md-6">
+                    @Html.LabelFor(model => model.ClientMarital)
+                    <br />
+                    @Html.DropDownList("ClientMarital", new SelectList(ViewBag.clientmaritalStatus, "Value", "Text"))
+                    @Html.ValidationMessageFor(model => model.ClientMarital)
+                </td>
+                <td class="col-md-6">
+                    @Html.LabelFor(model => model.ClientDOB)
+                    <br />
+                    @Html.EditorFor(model => model.ClientDOB)
+                    @Html.ValidationMessageFor(model => model.ClientDOB)
+                </td>
+            </tr>
+
+            <tr class="form-group col-md-12">
+                <td class="col-md-6">
+                    @Html.LabelFor(model => model.ClientHealthNum)
+                    <br />
+                    @Html.EditorFor(model => model.ClientHealthNum)
+                    @Html.ValidationMessageFor(model => model.ClientHealthNum)
+                </td>
+                <td class="col-md-6">
+                    @Html.LabelFor(model => model.ClientGender)
+                    <br />
+                    @Html.DropDownList("ClientGender", new SelectList(ViewBag.clientgender, "value", "Text"))
+                    @Html.ValidationMessageFor(model => model.ClientGender)
+                </td>
+            </tr>
+
+        </table>
+        <a data-toggle="collapse" href="#collapseTwo">
+            <h3>Additional information</h3>
+        </a>
+        <table id="collapseTwo" class="panel-collapse collapse table table-condensed col-md-12">
+
+            <tr class="form-group col-md-12">
+                <td class="col-md-6">
+                    @Html.LabelFor(model => model.RoomNumber)
+                    <br />
+                    @Html.EditorFor(model => model.RoomNumber)
+                    @Html.ValidationMessageFor(model => model.RoomNumber)
+                </td>
+                <td class="col-md-6">
+                    @Html.LabelFor(model => model.ClientFamilyDoc)
+                    <br />
+                    @Html.EditorFor(model => model.ClientFamilyDoc)
+                    @Html.ValidationMessageFor(model => model.ClientFamilyDoc)
+                </td>
+            </tr>
+            <tr class="form-group col-md-12">
+                <td class="col-md-6">
+                    @Html.LabelFor(model => model.ClientType)
+                    <br />
+                    @Html.DropDownList("ClientType", new SelectList(ViewBag.clienttype, "Value", "Text"))
+                    @Html.ValidationMessageFor(model => model.ClientType)
+                </td>
+                <td class="col-md-6">
+                    @Html.LabelFor(model => model.ClientSuiteNumber)
+                    <br />
+                    @Html.EditorFor(model => model.ClientSuiteNumber)
+                    @Html.ValidationMessageFor(model => model.ClientSuiteNumber)
+                </td>
+            </tr>
+
+            <tr class="form-group col-md-12">
+                <td class="col-md-6">
+                    @Html.LabelFor(model => model.ClientSuitePhone)
+                    <br />
+                    @Html.EditorFor(model => model.ClientSuitePhone)
+                    @Html.ValidationMessageFor(model => model.ClientSuitePhone)
+                </td>
+                <td class="col-md-6">
+                    @Html.LabelFor(model => model.ClientPersonalAgent)
+                    <br />
+                    @Html.EditorFor(model => model.ClientPersonalAgent)
+                    @Html.ValidationMessageFor(model => model.ClientPersonalAgent)
+
+
+                </td>
+            </tr>
+
+            <tr class="form-group col-md-12">
+                <td class="col-md-6">
+                    @Html.LabelFor(model => model.ClientSafetyConcern)
+                    <br />
+                    @Html.EditorFor(model => model.ClientSafetyConcern)
+                    @Html.ValidationMessageFor(model => model.ClientSafetyConcern)
+                </td>
+                <td class="col-md-6">
+                    @Html.LabelFor(model => model.ClientRiskLevel)
+                    <br />
+                    @Html.EditorFor(model => model.ClientRiskLevel)
+                    @Html.ValidationMessageFor(model => model.ClientRiskLevel)
+                </td>
+            </tr>
+
+            <tr class="form-group col-md-12">
+                <td class="col-md-6">
+                    @Html.LabelFor(model => model.ClientIndoorMobility)
+                    <br />
+                    @Html.EditorFor(model => model.ClientIndoorMobility)
+                    @Html.ValidationMessageFor(model => model.ClientIndoorMobility)
+
+
+                </td>
+                <td class="col-md-6">
+                    @Html.LabelFor(model => model.ClientOutdoorMobility)
+                    <br />
+                    @Html.EditorFor(model => model.ClientOutdoorMobility)
+                    @Html.ValidationMessageFor(model => model.ClientOutdoorMobility)
+                </td>
+            </tr>
+
+            <tr class="form-group col-md-12">
+                <td class="col-md-6">
+                    @Html.LabelFor(model => model.ClientPreferredLanguage)
+                    <br />
+                    @Html.EditorFor(model => model.ClientPreferredLanguage)
+                    @Html.ValidationMessageFor(model => model.ClientPreferredLanguage)
+                </td>
+                <td class="col-md-6">
+                    @Html.LabelFor(model => model.ClientInterpreterRequired)
+                    <br />
+                    @Html.DropDownList("ClientInterpreterRequired", new SelectList(ViewBag.clientinterpreter, "Value", "Text"))
+                    @Html.ValidationMessageFor(model => model.ClientInterpreterRequired)
+                </td>
+            </tr>
+
+            <tr class="form-group col-md-12">
+                <td class="col-md-6">
+                    @Html.LabelFor(model => model.ClientHearing)
+                    <br />
+                    @Html.DropDownList("ClientHearing", new SelectList(ViewBag.clienthearing, "Value", "Text"))
+                    @Html.ValidationMessageFor(model => model.ClientHearing)
+                </td>
+                <td class="col-md-6">
+                    @Html.LabelFor(model => model.ClientDoesUnderstand)
+                    <br />
+                    @Html.EditorFor(model => model.ClientDoesUnderstand)
+                    @Html.ValidationMessageFor(model => model.ClientDoesUnderstand)
+                </td>
+            </tr>
+
+            <tr class="form-group col-md-12">
+                <td class="col-md-6">
+                    @Html.LabelFor(model => model.ClientVision)
+                    <br />
+                    @Html.DropDownList("ClientVision", new SelectList(ViewBag.clientvision, "Value", "Text"))
+                    @Html.ValidationMessageFor(model => model.ClientVision)
+                </td>
+                <td class="col-md-6">
+                    @Html.LabelFor(model => model.ClientCurrentMedication)
+                    <br />
+                    @Html.EditorFor(model => model.ClientCurrentMedication)
+                    @Html.ValidationMessageFor(model => model.ClientCurrentMedication)
+                </td>
+            </tr>
+
+            <tr class="form-group col-md-12">
+                <td class="col-md-6">
+                    @Html.LabelFor(model => model.ClientFood)
+                    <br />
+                    @Html.EditorFor(model => model.ClientFood)
+                    @Html.ValidationMessageFor(model => model.ClientFood)
+                </td>
+                <td class="col-md-6">
+                    @Html.LabelFor(model => model.ClientFamilyDoctor)
+                    <br />
+                    @Html.EditorFor(model => model.ClientFamilyDoctor)
+                    @Html.ValidationMessageFor(model => model.ClientFamilyDoctor)
+                </td>
+            </tr>
+            <tr class="form-group col-md-12">
+                <td class="col-md-6">
+                    @Html.LabelFor(model => model.ClientMedication)
+                    <br />
+                    @Html.EditorFor(model => model.ClientMedication)
+                    @Html.ValidationMessageFor(model => model.ClientMedication)
+                </td>
+                <td class="col-md-6">
+                    @Html.LabelFor(model => model.ClientPharmacist)
+                    <br />
+                    @Html.EditorFor(model => model.ClientPharmacist)
+                    @Html.ValidationMessageFor(model => model.ClientPharmacist)
+                </td>
+            </tr>
+
+
+            <tr class="form-group col-md-12">
+                <td class="col-md-6">
+                    @Html.LabelFor(model => model.ClientSpecialDiet)
+                    <br />
+                    @Html.EditorFor(model => model.ClientSpecialDiet)
+                    @Html.ValidationMessageFor(model => model.ClientSpecialDiet)
+                </td>
+                <td class="col-md-6">
+                    @Html.LabelFor(model => model.ClientOther)
+                    <br />
+                    @Html.EditorFor(model => model.ClientOther)
+                    @Html.ValidationMessageFor(model => model.ClientOther)
+                </td>
+            </tr>
+
+            <tr class="form-group col-md-12">
+                <td class="col-md-6">
+                    @Html.LabelFor(model => model.ClientDiagnosis)
+                    <br />
+                    @Html.EditorFor(model => model.ClientDiagnosis)
+                    @Html.ValidationMessageFor(model => model.ClientDiagnosis)
+                </td>
+            </tr>
+        </table>
+        <table>
+            <tr class="form-group col-md-12">
+                <td>
+                    <p class="btn btn-default">
+                        @Html.ActionLink("Back", "Index")
+                    </p>
+                </td>
+
+                <td>
+                    <input type="submit" value="Save" class="btn btn-default" />
+                </td>
+
+            </tr>
+        </table>
+    </div>
+}
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

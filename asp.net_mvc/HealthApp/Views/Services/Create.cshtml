@@ -1,0 +1,120 @@
+﻿@model healthApp.Models.Services
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Tasks</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PatientID, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PatientID)
+                @Html.ValidationMessageFor(model => model.PatientID)
+            </div>
+        </div>
+        @{ var taskList = new List<SelectListItem>
+                   {
+                       new SelectListItem{Text="Medication", Value="Medication"},
+                       new SelectListItem{Text="Bath/Shower", Value="Bath/Shower"},
+                       new SelectListItem{Text="House Keeping", Value="House Keeping"}
+                   };
+        }
+        <div class="form-group">
+            @Html.LabelFor(model => model.Task, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("Task", new SelectList(taskList, "Text", "Value"))
+                @Html.ValidationMessageFor(model => model.Task)
+
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.duration, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.duration)
+                @Html.ValidationMessageFor(model => model.duration)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.dtStart, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.dtStart)
+                @Html.ValidationMessageFor(model => model.dtStart)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.dtEnd, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.dtEnd)
+                @Html.ValidationMessageFor(model => model.dtEnd)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.freq, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.freq)
+                @Html.ValidationMessageFor(model => model.freq)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.interval, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.interval)
+                @Html.ValidationMessageFor(model => model.interval)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.count, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.count)
+                @Html.ValidationMessageFor(model => model.count)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.byDay, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.byDay)
+                @Html.ValidationMessageFor(model => model.byDay)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.byMonthDay, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.byMonthDay)
+                @Html.ValidationMessageFor(model => model.byMonthDay)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

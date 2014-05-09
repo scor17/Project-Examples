@@ -1,0 +1,317 @@
+﻿@model healthApp.Models.Client
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>This is @Html.DisplayFor(model => model.ClientFirstName)</h2>
+@{
+<div>
+    <style type="text/css" media="print">
+        a {
+            visibility: hidden;
+        }
+    </style>
+	
+    <table class="table table-striped">
+        <thead style="padding:100px">
+
+        <th colspan="4">
+            <b>@Html.DisplayFor(model => model.ClientFirstName) @Html.DisplayFor(model => model.ClientLastName)</b>
+        </th>
+        </thead>
+        <tr>
+
+            <td rowspan="3" style="width: 10%; margin-spacing:0 25">
+                <img src="@Url.Content("~/Client/ViewImage/" + @Html.DisplayFor(model => model.ClientID))" style="height: 98px; width: 103px" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>@Html.DisplayNameFor(model => model.ClientGender)</b>
+            </td>
+
+            <td>
+                @Html.DisplayFor(model => model.ClientGender)
+            </td>
+            <td>
+                <b>@Html.ActionLink("Edit", "Edit", new { id = Model.ClientID })</b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>@Html.DisplayNameFor(model => model.ClientDOB)</b>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.ClientDOB)
+            </td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <b>@Html.DisplayNameFor(model => model.ClientHealthNum)</b>
+            </td>
+            <td colspan="1">
+                @Html.DisplayFor(model => model.ClientHealthNum)
+            </td>
+
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <b>@Html.DisplayNameFor(model => model.ClientMarital)</b>
+            </td>
+            <td colspan="1">
+                @Html.DisplayFor(model => model.ClientMarital)
+            </td>
+
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <b>@Html.DisplayNameFor(model => model.RoomNumber)</b>
+            </td>
+            <td colspan="1">
+                @Html.DisplayFor(model => model.RoomNumber)
+            </td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <b>@Html.DisplayNameFor(model => model.ClientFamilyDoc)</b>
+            </td>
+            <td colspan="1">
+                @Html.DisplayFor(model => model.ClientFamilyDoc)
+            </td>
+            <td>
+                
+            </td>
+        </tr>
+
+        @* Shit new *@
+
+        <tr>
+            <td colspan="2">
+                <b>@Html.DisplayNameFor(model => model.ClientType)</b>
+            </td>
+            <td colspan="2">
+                @Html.DisplayFor(model => model.ClientType)
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <b>@Html.DisplayNameFor(model => model.ClientSuiteNumber)</b>
+            </td>
+            <td colspan="2">
+                @Html.DisplayFor(model => model.ClientSuiteNumber)
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <b>@Html.DisplayNameFor(model => model.ClientSuitePhone)</b>
+            </td>
+            <td colspan="2">
+                @Html.DisplayFor(model => model.ClientSuitePhone)
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <b>@Html.DisplayNameFor(model => model.ClientPersonalAgent)</b>
+            </td>
+            <td colspan="2">
+                @Html.DisplayFor(model => model.ClientPersonalAgent)
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <b>@Html.DisplayNameFor(model => model.ClientSafetyConcern)</b>
+            </td>
+            <td colspan="2">
+                @Html.DisplayFor(model => model.ClientSafetyConcern)
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <b>@Html.DisplayNameFor(model => model.ClientRiskLevel)</b>
+            </td>
+            <td colspan="2">
+                @Html.DisplayFor(model => model.ClientRiskLevel)
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <b>@Html.DisplayNameFor(model => model.ClientIndoorMobility)</b>
+            </td>
+            <td colspan="2">
+                @Html.DisplayFor(model => model.ClientIndoorMobility)
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <b>@Html.DisplayNameFor(model => model.ClientOutdoorMobility)</b>
+            </td>
+            <td colspan="2">
+                @Html.DisplayFor(model => model.ClientOutdoorMobility)
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <b>@Html.DisplayNameFor(model => model.ClientPreferredLanguage)</b>
+            </td>
+            <td colspan="2">
+                @Html.DisplayFor(model => model.ClientPreferredLanguage)
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <b>@Html.DisplayNameFor(model => model.ClientInterpreterRequired)</b>
+            </td>
+            <td colspan="2">
+                @Html.DisplayFor(model => model.ClientInterpreterRequired)
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <b>@Html.DisplayNameFor(model => model.ClientHearing)</b>
+            </td>
+            <td colspan="2">
+                @Html.DisplayFor(model => model.ClientHearing)
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <b>@Html.DisplayNameFor(model => model.ClientHearing)</b>
+            </td>
+            <td colspan="2">
+                @Html.DisplayFor(model => model.ClientHearing)
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <b>@Html.DisplayNameFor(model => model.ClientDoesUnderstand)</b>
+            </td>
+            <td colspan="2">
+                @Html.DisplayFor(model => model.ClientDoesUnderstand)
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <b>@Html.DisplayNameFor(model => model.ClientVision)</b>
+            </td>
+            <td colspan="2">
+                @Html.DisplayFor(model => model.ClientVision)
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <b>@Html.DisplayNameFor(model => model.ClientCurrentMedication)</b>
+            </td>
+            <td colspan="2">
+                @Html.DisplayFor(model => model.ClientCurrentMedication)
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <b>@Html.DisplayNameFor(model => model.ClientFood)</b>
+            </td>
+            <td colspan="2">
+                @Html.DisplayFor(model => model.ClientFood)
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <b>@Html.DisplayNameFor(model => model.ClientFamilyDoctor)</b>
+            </td>
+            <td colspan="2">
+                @Html.DisplayFor(model => model.ClientFamilyDoctor)
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <b>@Html.DisplayNameFor(model => model.ClientMedication)</b>
+            </td>
+            <td colspan="2">
+                @Html.DisplayFor(model => model.ClientMedication)
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <b>@Html.DisplayNameFor(model => model.ClientPharmacist)</b>
+            </td>
+            <td colspan="2">
+                @Html.DisplayFor(model => model.ClientPharmacist)
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <b>@Html.DisplayNameFor(model => model.ClientSpecialDiet)</b>
+            </td>
+            <td colspan="2">
+                @Html.DisplayFor(model => model.ClientSpecialDiet)
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <b>@Html.DisplayNameFor(model => model.ClientOther)</b>
+            </td>
+            <td colspan="2">
+                @Html.DisplayFor(model => model.ClientOther)
+            </td>
+        </tr>
+        
+        <tr>
+            <td colspan="2">
+                <b>@Html.DisplayNameFor(model => model.ClientDiagnosis)</b>
+            </td>
+            <td colspan="2">
+                @Html.DisplayFor(model => model.ClientDiagnosis)
+            </td>
+        </tr>
+
+
+    </table>
+    <br />
+    <br />
+    
+</div>
+    
+<div id="detailsLinks">
+    <div class="btn btn-default" >@Html.ActionLink("Back", "Index")</div> |
+    <div class="btn btn-default">@Html.ActionLink("Print", "", new { id = "" }, new { id = "printButton", onclick = "printPage()" })</div>
+</div>
+<script>
+    function printPage()
+    {
+        window.print();
+        document.getElementById("printButton").style.display = 'none';
+        document.getElementById("detailsLinks").style.display = 'none';
+    }
+</script> 
+}

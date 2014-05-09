@@ -1,0 +1,73 @@
+﻿@model healthApp.Models.Credentials
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+<style>
+    .col-xs-12{background-color:inherit;}
+</style>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Accounts</h4>
+       
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.ID)
+        <div class="container">
+        <div class="col-lg-2"></div>
+            <div class="col-lg-8 form-group">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
+            <label for="Username">Username</label>
+        <br />
+        @Html.TextBoxFor(model => model.UserName, new { id = "username", @class="form-control"})
+        @Html.ValidationMessageFor(model => model.UserName)
+        </div>
+        
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <label for="password">Password</label>
+            <br />
+            @Html.TextBoxFor(model => model.Password, new { type = "password", id = "password", @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Password)
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+           <label for="firstname">First Name</label>
+           <br />
+           @Html.TextBoxFor(model => model.fName, new { id = "firstname", @class = "form-control" })
+           @Html.ValidationMessageFor(model => model.fName)
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <label for="lastname">Last Name</label>
+            <br />
+            @Html.TextBoxFor(model => model.lName, new { id = "lastname", @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.lName)
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <label for="accountType">Account Type</label>
+            <br />
+            @Html.TextBoxFor(model => model.acctType, new { id = "accountType", @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.acctType)
+        </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <input type="submit" value="Save" class="btn btn-default" style="margin: 7% 0 0 68%;" />
+                    </div>
+                </div>
+            <div class="col-lg-2"></div>     
+         </div>
+        </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
